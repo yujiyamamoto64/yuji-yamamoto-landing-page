@@ -1,184 +1,341 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuji Yamamoto — Backend Developer & AI Integrator</title>
+  <title>Yuji Yamamoto | Backend Java + IA aplicada</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Configuração do Tailwind + Dark Mode -->
   <script>
     tailwind.config = {
-      darkMode: 'media',
+      darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
           colors: {
-            primary: "#1E40AF", // azul premium
-            secondary: "#1E3A8A",
+            ink: '#050913',
+            neon: '#5ef4ff',
+            ember: '#fbbf24',
+            carbon: '#0f172a',
+          },
+          boxShadow: {
+            glow: '0 12px 60px rgba(94, 244, 255, 0.25)',
           },
         },
       },
     };
   </script>
-
-  <!-- Fonte bonita -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(94, 244, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.12), transparent 25%),
+        #050913;
     }
 
-    /* Animações premium */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .slide-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: slideUp 1s forwards;
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .scale-in {
-      opacity: 0;
-      transform: scale(0.9);
-      animation: scaleIn 0.8s forwards;
-    }
-
-    @keyframes scaleIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 9999px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
   </style>
 </head>
+<body class="text-slate-100 relative overflow-x-hidden">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -left-24 top-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"></div>
+    <div class="absolute right-0 top-10 h-72 w-72 rounded-full bg-amber-300/10 blur-3xl"></div>
+    <div class="absolute left-1/2 bottom-10 h-72 w-72 -translate-x-1/2 rounded-full bg-indigo-500/10 blur-3xl"></div>
+  </div>
 
-<body class="bg-gray-50 dark:bg-gray-900 dark:text-white">
-
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-
-    <!-- Foto circular -->
-    <img src="profile-picture.jpg" class="w-52 h-52 rounded-full object-cover shadow-xl border-4 border-primary fade-in"
-      alt="Foto de Yuji Yamamoto" />
-
-    <h1 class="text-4xl md:text-6xl font-extrabold mt-8 slide-up">
-      Sistemas inteligentes que <span class="text-primary">aumentam lucro</span>
-      e <span class="text-primary">automatizam processos</span>
-    </h1>
-
-    <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl slide-up">
-      Backend Developer & AI Integrator.
-      Crio APIs, automações e soluções de IA que resolvem problemas reais e geram resultados imediatos.
-    </p>
-
-    <div class="flex gap-4 mt-10 scale-in">
-      <a href="https://wa.me/5511948533896"
-        class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary transition">
-        Falar no WhatsApp
-      </a>
-
-      <a href="#servicos"
-        class="border border-gray-700 dark:border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-        Meus Serviços
-      </a>
+  <nav class="relative max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="h-10 w-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center font-semibold">YY</span>
+      <div>
+        <p class="text-sm uppercase tracking-[0.18em] text-slate-400">Backend + IA</p>
+        <p class="text-lg font-semibold">Yuji Yamamoto</p>
+      </div>
     </div>
-  </section>
-
-
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="py-20 bg-white dark:bg-gray-800 px-6">
-
-    <h2 class="text-4xl font-bold text-center">O que eu faço</h2>
-    <p class="text-center text-gray-600 dark:text-gray-300 mt-3 max-w-xl mx-auto">
-      Transformo processos manuais e demorados do seu negócio em automações e IA aplicadas.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-10 mt-16 max-w-6xl mx-auto">
-
-      <!-- Card 1 -->
-      <div class="p-8 rounded-lg bg-gray-100 dark:bg-gray-700 hover:shadow-xl transition fade-in">
-        <h3 class="text-xl font-bold flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m-3-6V4m0 0L5 9m7-5l7 5" />
-          </svg>
-          Chatbots com IA
-        </h3>
-        <p class="mt-3 text-gray-600 dark:text-gray-300">
-          Assistentes inteligentes para WhatsApp, sites e sistemas. Respondem e entendem clientes 24/7.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="p-8 rounded-lg bg-gray-100 dark:bg-gray-700 hover:shadow-xl transition fade-in">
-        <h3 class="text-xl font-bold flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
-          </svg>
-          Sistemas Personalizados
-        </h3>
-        <p class="mt-3 text-gray-600 dark:text-gray-300">
-          APIs, microserviços, dashboards, fluxos automatizados e integrações empresariais.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="p-8 rounded-lg bg-gray-100 dark:bg-gray-700 hover:shadow-xl transition fade-in">
-        <h3 class="text-xl font-bold flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          Integrações Inteligentes
-        </h3>
-        <p class="mt-3 text-gray-600 dark:text-gray-300">
-          Pagamentos, bancos de dados, notificações, gateways e automações completas.
-        </p>
-      </div>
-
+    <div class="flex items-center gap-3">
+      <a href="#projetos" class="px-4 py-2 rounded-full glass hover:shadow-glow transition">Projetos</a>
+      <a href="https://github.com/yujiyamamoto64" target="_blank" class="px-4 py-2 rounded-full glass hover:shadow-glow transition">GitHub</a>
+      <a href="https://wa.me/5511948533896" class="px-4 py-2 rounded-full bg-neon text-ink font-semibold shadow-glow hover:-translate-y-0.5 transition">WhatsApp</a>
     </div>
-  </section>
+  </nav>
 
+  <main class="relative max-w-6xl mx-auto px-6 pb-24">
+    <section class="grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center pt-10">
+      <div class="space-y-6">
+        <p class="tag bg-white/10 text-sm w-fit">IA aplicada + Java robusto</p>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Solucoes de IA e backend em Java que ja vivem em producao
+        </h1>
+        <p class="text-lg text-slate-300">
+          Integro IA generativa em fluxos de negocio e construo APIs resilientes em Spring Boot. Trabalho com RAG,
+          pagamentos e testes de carga para que as ideias saiam do prototipo e funcionem no mundo real.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="tag">LangChain e RAG corporativo</span>
+          <span class="tag">Spring Boot + arquitetura hexagonal</span>
+          <span class="tag">Testes de carga e observabilidade</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="https://wa.me/5511948533896" class="px-6 py-3 rounded-lg bg-neon text-ink font-semibold shadow-glow text-center">Fale comigo agora</a>
+          <a href="#servicos" class="px-6 py-3 rounded-lg glass border border-white/15 text-center">Ver como eu entrego</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+          <div class="glass p-4 rounded-xl">
+            <p class="text-sm text-slate-400">Repos publicos</p>
+            <p class="text-2xl font-semibold">6+</p>
+          </div>
+          <div class="glass p-4 rounded-xl">
+            <p class="text-sm text-slate-400">IA + Java</p>
+            <p class="text-2xl font-semibold">RAG, bots, pagamentos</p>
+          </div>
+          <div class="glass p-4 rounded-xl">
+            <p class="text-sm text-slate-400">Entrega</p>
+            <p class="text-2xl font-semibold">Prod ready</p>
+          </div>
+        </div>
+      </div>
 
-  <!-- CONTATO -->
-  <section class="py-20 bg-primary text-white text-center px-6">
-    <h2 class="text-4xl font-bold">Vamos criar algo incrível juntos?</h2>
-    <p class="mt-4 text-lg">Clique abaixo e fale comigo agora.</p>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-neon/20 via-white/5 to-amber-300/10 rounded-3xl blur-xl"></div>
+        <div class="relative glass rounded-3xl p-6 border border-white/10">
+          <img src="profile-picture.jpg" alt="Yuji Yamamoto" class="w-full h-[340px] object-cover rounded-2xl border border-white/10 shadow-xl">
+          <div class="mt-6 space-y-3">
+            <p class="text-sm text-slate-300">Stack atual</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">Java 17+</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Postgres</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <a href="https://wa.me/5511948533896"
-      class="mt-8 inline-block bg-white text-primary font-bold px-10 py-4 rounded-lg shadow-lg hover:bg-gray-200 transition">
-      Chamar no WhatsApp
-    </a>
-  </section>
+    <section id="projetos" class="mt-20 space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="tag text-sm">Projetos reais</p>
+          <h2 class="text-3xl font-semibold mt-2">IA e Java que voce pode ver no GitHub</h2>
+          <p class="text-slate-300 mt-2 max-w-2xl">
+            Destaques dos repositorios citados: RAG corporativo, pagamentos com arquitetura hexagonal,
+            automacoes com IA e testes de carga para garantir performance.
+          </p>
+        </div>
+        <a href="https://github.com/yujiyamamoto64" target="_blank" class="hidden md:inline-flex px-4 py-2 rounded-full glass border border-white/15 hover:shadow-glow transition">Ver perfil GitHub</a>
+      </div>
 
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">IA e RAG</span>
+            <a href="https://github.com/yujiyamamoto64/company-rag-langchain" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Company RAG LangChain</h3>
+          <p class="text-slate-300 mt-2">Busca semantica, ingestao de documentos e respostas contextualizadas para times internos usando LangChain.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">LangChain</span>
+            <span class="tag">Vetores</span>
+            <span class="tag">APIs</span>
+          </div>
+        </article>
 
-  <!-- FOOTER -->
-  <footer class="py-10 text-center text-gray-500 text-sm dark:text-gray-400">
-    © 2025 Yuji Yamamoto — Backend Developer & AI Integrator
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">RAG interno</span>
+            <a href="https://github.com/yujiyamamoto64/corp-guide-rag" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Corp Guide RAG</h3>
+          <p class="text-slate-300 mt-2">Guia corporativo com recuperacao aumentada de conhecimento para suportar colaboradores com respostas instantaneas.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">RAG</span>
+            <span class="tag">Chat corporativo</span>
+            <span class="tag">Observabilidade</span>
+          </div>
+        </article>
+
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">Pagamentos</span>
+            <a href="https://github.com/yujiyamamoto64/hexagonal-payment-spring-boot" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Hexagonal Payment (Spring Boot)</h3>
+          <p class="text-slate-300 mt-2">Gateway de pagamentos com arquitetura hexagonal, separando dominio, adaptadores e aplicacao para facilitar testes e evolucao.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Hexagonal</span>
+            <span class="tag">Validacoes</span>
+          </div>
+        </article>
+
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">Performance</span>
+            <a href="https://github.com/yujiyamamoto64/java-spring-load-test" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Java Spring Load Test</h3>
+          <p class="text-slate-300 mt-2">Cenarios de teste de carga para APIs Spring, medindo latencia e throughput e sinalizando gargalos cedo.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">Testes</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Monitoramento</span>
+          </div>
+        </article>
+
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">IA em pagamentos</span>
+            <a href="https://github.com/yujiyamamoto64/flowpay-ai" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Flowpay AI</h3>
+          <p class="text-slate-300 mt-2">Orquestracao de cobrancas com IA e automacoes para reduzir friccao no checkout e follow-up.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">IA</span>
+            <span class="tag">Pagamentos</span>
+            <span class="tag">Automacao</span>
+          </div>
+        </article>
+
+        <article class="glass rounded-2xl p-5 border border-white/10 hover:shadow-glow transition">
+          <div class="flex items-center justify-between">
+            <span class="tag">API e qualidade</span>
+            <a href="https://github.com/yujiyamamoto64/igni-code-challenge" target="_blank" class="text-neon text-sm">GitHub</a>
+          </div>
+          <h3 class="text-xl font-semibold mt-4">Igni Code Challenge</h3>
+          <p class="text-slate-300 mt-2">APIs REST com foco em clareza de dominio, qualidade de codigo e entrega rapida.</p>
+          <div class="flex flex-wrap gap-2 mt-4 text-sm text-slate-300">
+            <span class="tag">REST</span>
+            <span class="tag">Clean code</span>
+            <span class="tag">Java</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicos" class="mt-20 grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-2xl p-8 border border-white/10">
+        <p class="tag">IA que entrega</p>
+        <h3 class="text-2xl font-semibold mt-4">IA em producao, nao so POC</h3>
+        <ul class="mt-4 space-y-3 text-slate-300">
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-neon/20 text-neon flex items-center justify-center text-sm font-semibold">1</span>
+            RAG corporativo com ingestao, vetorizacao e guardrails para conhecimento interno.
+          </li>
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-neon/20 text-neon flex items-center justify-center text-sm font-semibold">2</span>
+            Chatbots e automacoes para WhatsApp e web com contexto de negocio.
+          </li>
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-neon/20 text-neon flex items-center justify-center text-sm font-semibold">3</span>
+            Observabilidade, testes e circuit breakers para evitar sustos em producao.
+          </li>
+        </ul>
+      </div>
+
+      <div class="glass rounded-2xl p-8 border border-white/10">
+        <p class="tag">Java de verdade</p>
+        <h3 class="text-2xl font-semibold mt-4">Backend resiliente em Spring Boot</h3>
+        <ul class="mt-4 space-y-3 text-slate-300">
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-amber-200/20 text-amber-200 flex items-center justify-center text-sm font-semibold">A</span>
+            Arquitetura hexagonal para isolar dominio e facilitar testes.
+          </li>
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-amber-200/20 text-amber-200 flex items-center justify-center text-sm font-semibold">B</span>
+            Integracoes com pagamentos, bancos de dados, filas e APIs externas.
+          </li>
+          <li class="flex gap-3">
+            <span class="h-6 w-6 rounded-full bg-amber-200/20 text-amber-200 flex items-center justify-center text-sm font-semibold">C</span>
+            Testes de carga e saneamento de performance antes do deploy.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-20 glass rounded-2xl p-10 border border-white/10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <p class="tag">Stack em foco</p>
+          <h3 class="text-2xl font-semibold mt-3">Ferramentas que uso no dia a dia</h3>
+          <p class="text-slate-300 mt-2">Do modelo generativo ate deploy e testes.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Java 17</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">Docker</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Testes de carga</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-20 grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+      <div class="space-y-4">
+        <p class="tag">Processo rapido</p>
+        <h3 class="text-3xl font-semibold">Vamos tirar a ideia do papel</h3>
+        <p class="text-slate-300">Defino o problema, desenho a arquitetura, valido com testes e coloco para rodar com monitoramento.</p>
+        <div class="grid sm:grid-cols-3 gap-4 pt-2">
+          <div class="glass rounded-xl p-4 border border-white/10">
+            <p class="text-sm text-slate-400">1. Descoberta</p>
+            <p class="font-semibold">Requisitos e contexto</p>
+          </div>
+          <div class="glass rounded-xl p-4 border border-white/10">
+            <p class="text-sm text-slate-400">2. Implementacao</p>
+            <p class="font-semibold">API + IA integradas</p>
+          </div>
+          <div class="glass rounded-xl p-4 border border-white/10">
+            <p class="text-sm text-slate-400">3. Performance</p>
+            <p class="font-semibold">Testes de carga e ajustes</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-8 border border-white/10">
+        <h4 class="text-xl font-semibold">Pronto para ajudar</h4>
+        <p class="text-slate-300 mt-2">Envie um ping no WhatsApp e conte o desafio. Respondo rapido e ja trago ideias de arquitetura.</p>
+        <div class="mt-6 flex flex-col gap-3">
+          <a href="https://wa.me/5511948533896" class="px-6 py-3 rounded-lg bg-neon text-ink font-semibold shadow-glow text-center">Chamar no WhatsApp</a>
+          <a href="https://github.com/yujiyamamoto64" target="_blank" class="px-6 py-3 rounded-lg glass border border-white/15 text-center">Ver repositorios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative border-t border-white/10 bg-carbon text-slate-300 py-10 px-6 mt-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold">Yuji Yamamoto</p>
+        <p class="text-sm text-slate-400">Backend Java + IA aplicada a negocio</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="https://github.com/yujiyamamoto64" target="_blank" class="hover:text-neon transition">GitHub</a>
+        <a href="https://wa.me/5511948533896" class="hover:text-neon transition">WhatsApp</a>
+      </div>
+    </div>
   </footer>
-
 </body>
-
 </html>
